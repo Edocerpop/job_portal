@@ -51,8 +51,8 @@
 				  			echo '<td>' . $result->PREFEREDSEX.'</td>';
 				  			echo '<td>' . $result->SECTOR_VACANCY.'</td>';
 				  			echo '<td>' . $result->JOBSTATUS.'</td>';
-				  		echo '<td align="center"><a title="Edit" href="index.php?view=edit&id='.$result->JOBID.'" class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></a>
-				  		     <a title="Delete" href="controller.php?action=delete&id='.$result->JOBID.'" class="btn btn-danger btn-xs  ">  <span class="fa  fa-trash-o fw-fa "></a></td>';
+				  		echo '<td align="center"><a title="Edit" href="index.php?view=edit&id='.$result->JOBID.'" class="btn btn-primary btn-xs  "> Edit <span class="fa fa-edit fw-fa"></a>
+				  		     <a title="Delete" href="controller.php?action=delete&id='.$result->JOBID.'" class="btn btn-danger btn-xs  "> Remove <span class="fa  fa-trash-o fw-fa "></a></td>';
 				  		// echo '<td></td>';
 				  		echo '</tr>';
 				  	} 

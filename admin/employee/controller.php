@@ -188,10 +188,10 @@ switch ($action) {
 	function doDelete(){
 	
 		
-				$id = 	$_GET['id'];
+		$id = 	$_GET['id'];
 
-				$emp = New Employee();
-	 		 	$emp->delete($id);
+		$worker = New Employee();
+		$worker->delete($id);
 			 
 		
 	

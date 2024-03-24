@@ -64,7 +64,7 @@ switch ($action) {
 			 
 
 
-				$sql = "SELECT * FROM tblemployees WHERE EMPLOYEEID='" .$_POST['EMPLOYEEID']. "'";
+				$sql = "SELECT * FROM tblemployees WHERE APPLICANTID='" .$_POST['APPLICANTID']. "'";
 				$mydb->setQuery($sql);
 				$cur = $mydb->executeQuery();
 				$maxrow = $mydb->num_rows($cur);
@@ -79,7 +79,7 @@ switch ($action) {
 					@$datehired = date_format(date_create($_POST['DATEHIRED']),'Y-m-d');
 
 					$emp = New Employee(); 
-					$emp->EMPLOYEEID 		= $_POST['EMPLOYEEID'];
+					$emp->APPLICANTID 		= $_POST['APPLICANTID'];
 					$emp->FNAME				= $_POST['FNAME']; 
 					$emp->LNAME				= $_POST['LNAME'];
 					$emp->MNAME 	   		= $_POST['MNAME'];
@@ -88,22 +88,18 @@ switch ($action) {
 					$emp->BIRTHPLACE		= $_POST['BIRTHPLACE'];  
 					$emp->AGE			    = $age;
 					$emp->SEX 				= $_POST['optionsRadios']; 
-					$emp->TELNO				= $_POST['TELNO'];
 					$emp->CIVILSTATUS		= $_POST['CIVILSTATUS']; 
-					$emp->POSITION			= trim($_POST['POSITION']);
-				
-					$emp->EMP_EMAILADDRESS	= $_POST['EMP_EMAILADDRESS'];
-					$emp->EMPUSERNAME		= $_POST['EMPLOYEEID'];
-					$emp->EMPPASSWORD		= sha1($_POST['EMPLOYEEID']);
+					$emp->EMP_EMAILADDRESS	= $_POST['EMAILADDRESS'];
+					$emp->EMPUSERNAME		= $_POST['APPLICANTID'];
+					$emp->EMPPASSWORD		= sha1($_POST['APPLICANTID']);
 					$emp->DATEHIRED			=  @$datehired;
-					$emp->COMPANYID			= $_POST['COMPANYID'];
 					$emp->create(); 
 
 
 				 
 							
 						$autonum = New Autonumber(); 
-						$autonum->auto_update('employeeid');
+						$autonum->auto_update('APPLICANTID');
 
 					message("New employee created successfully!", "success");
 					redirect("index.php");
@@ -132,14 +128,14 @@ switch ($action) {
 			$age = date_diff(date_create($birthdate),date_create('today'))->y;
 		 	if ($age < 20 ){
 		       message("Invalid age. 20 years old and above is allowed.", "error");
-		       redirect("index.php?view=edit&id=".$_POST['EMPLOYEEID']);
+		       redirect("index.php?view=edit&id=".$_POST['APPLICANTID']);
 
 		    }else{
 
 		    	@$datehired = date_format(date_create($_POST['DATEHIRED']),'Y-m-d');
 
 					$emp = New Employee(); 
-					$emp->EMPLOYEEID 		= $_POST['EMPLOYEEID'];
+					$emp->APPLICANTID 		= $_POST['APPLICANTID'];
 					$emp->FNAME				= $_POST['FNAME']; 
 					$emp->LNAME				= $_POST['LNAME'];
 					$emp->MNAME 	   		= $_POST['MNAME'];
@@ -148,21 +144,21 @@ switch ($action) {
 					$emp->BIRTHPLACE		= $_POST['BIRTHPLACE'];  
 					$emp->AGE			    = $age;
 					$emp->SEX 				= $_POST['optionsRadios']; 
-					$emp->TELNO				= $_POST['TELNO'];
+
 					$emp->CIVILSTATUS		= $_POST['CIVILSTATUS']; 
-					$emp->POSITION			= trim($_POST['POSITION']);
+
 					
-					$emp->EMP_EMAILADDRESS		= $_POST['EMP_EMAILADDRESS'];
-					$emp->EMPUSERNAME		= $_POST['EMPLOYEEID'];
-					$emp->EMPPASSWORD		= sha1($_POST['EMPLOYEEID']);
+					$emp->EMP_EMAILADDRESS		= $_POST['EMAILADDRESS'];
+					$emp->EMPUSERNAME		= $_POST['APPLICANTID'];
+					$emp->EMPPASSWORD		= sha1($_POST['APPLICANTID']);
 					$emp->DATEHIRED			=  @$datehired;
 					$emp->COMPANYID			= $_POST['COMPANYID'];
 
-					$emp->update($_POST['EMPLOYEEID']);
+					$emp->update($_POST['APPLICANTID']);
  
 
 				message("Employee has been updated!", "success");
-		       redirect("index.php?view=edit&id=".$_POST['EMPLOYEEID']);
+		       redirect("index.php?view=edit&id=".$_POST['APPLICANTID']);
 	    	}
 
 

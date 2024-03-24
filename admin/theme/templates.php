@@ -35,18 +35,18 @@
       <span class="logo-lg"><b>GraphCall</b></span>
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <!-- <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
-      </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
- 
-          <?php
+      </a> -->
+      <?php
               $user = New User();
               $singleuser = $user->single_user($_SESSION['ADMIN_USERID']);
 
           ?>
+      <!-- <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+ 
+          
           <li class="dropdown user user-menu" style="padding-right: 15px;"  >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="user-image" alt="User Image">
@@ -68,7 +68,7 @@
           </li>
           
         </ul>
-      </div>
+      </div> -->
     </nav>
   </header>
 
@@ -123,6 +123,12 @@
  
       <ul class="sidebar-menu"> 
         <li  class="<?php echo (currentpage() == 'index.php') ? "active" : false;?>" >
+        <a href="<?php echo web_root.'admin/user/index.php?view=view&id='.$_SESSION['ADMIN_USERID'] ;?>" class="dropdown-toggle" data-toggle="dropdown">
+        <img src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="user-image" width="50" height="50" alt="User Image">
+        &nbsp;&nbsp;&nbsp;<span class="hidden-xs"><?php echo $singleuser->FULLNAME; ?></span>
+            </a>
+        </li>
+        <li  class="<?php echo (currentpage() == 'index.php') ? "active" : false;?>" >
           <a href="<?php echo web_root ;?>admin/">
              <span>Dashboard</span>  
           </a> 
@@ -166,6 +172,12 @@
           <a href="<?php echo web_root; ?>admin/user/">
             </i> <span>Manage Users</span> </a>
         </li>
+
+
+
+        <li class="<?php echo (currentpage() == 'user') ? "active" : false;?>">
+        <a href="<?php echo web_root ;?>admin/logout.php" >Sign out</a>
+        </li>
         
       </ul>
     </section>
@@ -178,21 +190,6 @@
       </h1>
       <ol class="breadcrumb">
         <?php
-
-          if ($title!='Home') {
-            # code... 
-            $active_title = '';
-            if (isset($_GET['view'])) {
-              # code...
-              $active_title = '<li class='.$active_title.'><a href="index.php">'.$title.'</a></li>';
-            }else{
-              $active_title = '<li class='.$active_title.'>'.$title.'</li>';
-            }
-            echo '<li><a href='.web_root.'admin/><i class="fa fa-dashboard"></i> Home</a></li>';
-            echo  $active_title;
-            echo  isset($_GET['view']) ? '<li class="active">'.$_GET['view'].'</li>' : '';
-          } 
-
 
         ?>
       </ol>

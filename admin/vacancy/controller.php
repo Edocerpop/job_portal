@@ -107,18 +107,16 @@ switch ($action) {
 			message("Company has been Deleted!","info");
 			redirect('index.php');
 
-		// $id = $_POST['selector'];
-		// $key = count($id);
+		$id = $_POST['selector'];
+		$key = count($id);
 
-		// for($i=0;$i<$key;$i++){
+		for($i=0;$i<$key;$i++){
 
-		// 	$category = New Category();
-		// 	$category->delete($id[$i]);
+			$category = New Category();
+			$category->delete($id[$i]);
 
-		// 	message("Category already Deleted!","info");
-		// 	redirect('index.php');
-		// }
-		// }
-		
-	}
+			message("Category already Deleted!","info");
+			redirect('index.php');
+		}
+		}
 ?>
