@@ -124,7 +124,7 @@
       <ul class="sidebar-menu"> 
         <li  class="<?php echo (currentpage() == 'index.php') ? "active" : false;?>" >
         <a href="<?php echo web_root.'admin/user/index.php?view=view&id='.$_SESSION['ADMIN_USERID'] ;?>" class="dropdown-toggle" data-toggle="dropdown">
-        <img src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="user-image" width="50" height="50" alt="User Image">
+        <!-- <img src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="user-image" width="50" height="50" alt="User Image"> -->
         &nbsp;&nbsp;&nbsp;<span class="hidden-xs"><?php echo $singleuser->FULLNAME; ?></span>
             </a>
         </li>

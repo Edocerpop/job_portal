@@ -17,29 +17,11 @@ if(!$_SESSION['ADMIN_ROLE']=='Administrator'){
 <div class="container">
 <div class="panel-body inf-content">
     <div class="row">
-        <div class="col-md-4">
-         <a  data-target="#myModal" data-toggle="modal" href="" title="Click here to Change Image." >
-            <img alt="" style="width:500px; height:400px;>"
-             title="" class="img-circle img-thumbnail isTooltip" src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" data-original-title="Usuario"> 
-         </a>  
-        </div>
+
         <div class="col-md-6">
             <h1><strong>User Profile</strong></h1><br>
              <form class="form-horizontal span6" action="controller.php?action=edit&view=" method="POST">
- 
-                   
-                    <!-- <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "user_id">User Id:</label> -->
-
-                      <!-- <div class="col-md-8"> -->
-                        
-                         <input id="USERID" name="USERID" type="Hidden" value="<?php echo $singleuser->USERID; ?>">
-                   <!--    </div>
-                    </div>
-                  </div>      -->      
-                  
+                <input id="USERID" name="USERID" type="Hidden" value="<?php echo $singleuser->USERID; ?>">
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
