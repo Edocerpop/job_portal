@@ -173,10 +173,10 @@ switch ($action) {
 		
 
 		
-				$id = 	$_GET['id'];
+		$id = 	$_GET['id'];
 
-				$emp = New Employee();
-	 		 	$emp->delete($id);
+		$reg = New Applicants();
+		$reg->delete($id);
 			 
 		
 		// }

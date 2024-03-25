@@ -54,16 +54,10 @@
               <ul class="nav nav-pills nav-stacked"> 
                 <li class="<?php echo ($view=='appliedjobs' || $view=='') ? 'active': '';?>"><a href="<?php echo web_root.'applicant/index.php?view=appliedjobs'; ?>"><i class="fa fa-list"></i> Applied Jobs
                    </a></li>
-                  <li class="<?php echo ($view=='accounts') ? 'active': '';?>"><a href="<?php echo web_root.'applicant/index.php?view=accounts'; ?>"><i class="fa fa-user"></i> Accounts </a></li>
+                  <!-- <li class="<?php echo ($view=='accounts') ? 'active': '';?>"><a href="<?php echo web_root.'applicant/index.php?view=accounts'; ?>"><i class="fa fa-user"></i> Accounts </a></li> -->
                 <li class="<?php echo ($view=='message') ? 'active': '';?>"><a href="<?php echo web_root.'applicant/index.php?view=message'; ?>"><i class="fa fa-envelope-o"></i> Messages
                   <span class="label label-success pull-right"><?php echo isset($showMsg->COUNT) ? $showMsg->COUNT : 0;?></span></a></li>
-              <!--      <li class="<?php echo ($view=='notification') ? 'active': '';?>"><a href="<?php echo web_root.'applicant/index.php?view=notification'; ?>"><i class="fa fa-bell-o"></i> Notification
-                  <span class="label label-success pull-right"><?php echo $notif; ?></span></a></li> -->
-                <!-- <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li> -->
-                <!-- <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li> -->
-                <!-- <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a> 
-                </li>-->
-                <!-- <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li> --> 
+
               </ul>
             </div>
             <!-- /.box-body -->
@@ -82,17 +76,6 @@
 
           <!-- <h1><?php echo $applicant->FNAME .' '.$applicant->MNAME.' '.$applicant->LNAME; ?>  </h1> -->
 <?php 
-    // if ($view =="message") { 
-    //  require_once("message.php");
-    // }elseif($view=='notification'){  
-    //     require_once("notification.php");  
-    // }elseif($view=='appliedjobs'){    
-    //     require_once("appliedjobs.php"); 
-    // }elseif($view=='accounts'){  
-    //     require_once("accounts.php");  
-    // }else{ 
-    //     require_once("appliedjobs.php");
-    // } 
 
     switch ($view) {
       case 'message':
