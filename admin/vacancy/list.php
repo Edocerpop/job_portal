@@ -24,9 +24,9 @@
 				  		<th>Duration of Employment</th> 
 				  		<th>Qualification/Work experience</th> 
 				  		<th>Job Description</th> 
-				  		<th>Prefered Sex</th> 
+				  		<th>Prefered Gender</th> 
 				  		<th>Sector of Vacancy</th> 
-				  		<th>Job Status</th> 
+						<th></th>
 				  		 <th width="10%" align="center">Action</th>
 				  	</tr>	
 				  </thead> 

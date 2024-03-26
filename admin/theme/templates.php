@@ -35,40 +35,14 @@
       <span class="logo-lg"><b>GraphCall</b></span>
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
-      <!-- <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a> -->
+    
       <?php
               $user = New User();
               $singleuser = $user->single_user($_SESSION['ADMIN_USERID']);
 
           ?>
-      <!-- <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
- 
-          
-          <li class="dropdown user user-menu" style="padding-right: 15px;"  >
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $singleuser->FULLNAME; ?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="user-header"> 
-                <img data-target="#menuModal"  data-toggle="modal"  src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="img-circle" alt="User Image" />  
-              </li> 
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="<?php echo web_root.'admin/user/index.php?view=view&id='.$_SESSION['ADMIN_USERID'] ;?>" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="<?php echo web_root ;?>admin/logout.php" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          
-        </ul>
-      </div> -->
+     
+         
     </nav>
   </header>
 
@@ -124,8 +98,7 @@
       <ul class="sidebar-menu"> 
         <li  class="<?php echo (currentpage() == 'index.php') ? "active" : false;?>" >
         <a href="<?php echo web_root.'admin/user/index.php?view=view&id='.$_SESSION['ADMIN_USERID'] ;?>" class="dropdown-toggle" data-toggle="dropdown">
-        <!-- <img src="<?php echo web_root.'admin/user/'. $singleuser->PICLOCATION;?>" class="user-image" width="50" height="50" alt="User Image"> -->
-        &nbsp;&nbsp;&nbsp;<span class="hidden-xs"><?php echo $singleuser->FULLNAME; ?></span>
+        <span class="hidden-xs"><?php echo $singleuser->FULLNAME; ?></span>
             </a>
         </li>
         <li  class="<?php echo (currentpage() == 'index.php') ? "active" : false;?>" >

@@ -14,10 +14,10 @@ if (!isset($_SESSION['ADMIN_USERID'])) {
     <table class="table table-striped table-hover" id="employee-table">
         <thead>
             <tr>
-                <th>Applicant No</th>
+                <th>Employee Id</th>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Sex</th>
+                <th>Gender</th>
                 <th>Age</th>
                 <th>Civil Status</th>
                 <th>Username</th>

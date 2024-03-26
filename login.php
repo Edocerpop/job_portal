@@ -1,5 +1,4 @@
  
-     <!-- Modal -->
           <div class="modal fade" id="myModal" ="-1">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -10,7 +9,6 @@
                   <h4 class="modal-title" id="myModalLabel">Login</h4>
                 </div>
 
-                <!-- <form action="process.php?action=login" enctype="multipart/form-data" method="post"> -->
                   <div class="modal-body hold-transition login-page">
                     <div id="loginerrormessage"></div>
                     <div class="login-box"> 
@@ -33,19 +31,15 @@
                                   </label>
                                 </div>
                               </div>
-                              <!-- /.col -->
                               <div class="col-xs-4">
                                 
                               </div>
-                              <!-- /.col -->
                             </div>
                           </form> 
                           
-                         <!--<a href="#">I forgot my password</a><br>
-                          <a href="<?php echo web_root; ?>index.php?q=register" class="text-center">Register a new membership</a>-->
+                
 
                         </div>
-                        <!-- /.login-box-body -->
                       </div>
                   </div>
 
@@ -53,7 +47,6 @@
                     <button class="btn btn-default" data-dismiss="modal">Close</button> <button class="btn btn-primary"
                     name="btnlogin" id="btnlogin"  >Login</button>
                   </div>
-                <!-- </form> -->
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
+              </div>
+            </div>
+          </div>

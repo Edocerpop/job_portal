@@ -1,15 +1,4 @@
 
-<!-- <div class="form-group">
-  <div class="col-md-11">
-  <label class="col-md-4 control-label" for=
-    "NATIONALID">NationalID:</label>
-
-    <div class="col-md-8"> 
-       <input class="form-control input-sm" id="NATIONALID" name="NATIONALID" placeholder=
-          "00-000000000000" type="text" value=""  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
-    </div>
-  </div>
-</div> -->
 <div class="form-group">
 	<div class="col-md-11">
 	<label class="col-md-4 control-label" for=
@@ -45,8 +34,7 @@
 		  <input name="deptid" type="hidden" value="">
 		  <input  class="form-control input-sm" id="MNAME" name="MNAME" placeholder=
 		      "Middle Name"    onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
-		   <!-- <input class="form-control input-sm" id="DEPARTMENT_DESC" name="DEPARTMENT_DESC" placeholder=
-		      "Description" type="text" value=""> -->
+		  
 		</div>
 	</div>
 </div> 
@@ -216,8 +204,7 @@
       <input name="deptid" type="hidden" value="">
       <input  class="form-control input-sm" id="PASS" name="PASS" placeholder=
           "Password" type="password"   onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
-       <!-- <input class="form-control input-sm" id="DEPARTMENT_DESC" name="DEPARTMENT_DESC" placeholder=
-          "Description" type="text" value=""> -->
+       
     </div>
   </div>
 </div> 
@@ -238,7 +225,6 @@
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-header">
-                            <!--<div style="border-bottom: 1px solid #ddd;padding: 10px;font-size: 25px;font-weight: bold;color: #000;margin-bottom: 5px;">Attach your Resume here.-->
                                 <input name="JOBID" type="hidden" value="<?php echo $_GET['job'];?>">
                             </div>
                         </div>

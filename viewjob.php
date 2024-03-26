@@ -26,9 +26,7 @@
                         <div class="mg-avl-rooms">
                             <div class="mg-avl-room">
                                 <div class="row">
-                                    <div class="col-sm-2">
-                                      <!--  <a href="#"><span class="fa fa-building-o" style="font-size: 50px"></span> <img src="img/room-1.png" alt="" class="img-responsive"> --></a>
-                                    </div>
+                                   
                                     <div class="col-sm-10">
                                         <div style="border-bottom: 1px solid #ddd;padding: 10px;font-size: 25px;font-weight: bold;color: #000;margin-bottom: 5px;"><?php echo $result->OCCUPATIONTITLE ;?> 
                                         </div> 
@@ -36,14 +34,13 @@
                                             <div class="col-sm-6">
                                                 <ul>
                                                     <li><i class="fp-ht-bed"></i>Required No. of Employee's : <?php echo $result->REQ_NO_EMPLOYEES; ?></li>
-                                                    <li><i class="fp-ht-food"></i>Salary : <?php echo number_format($result->SALARIES,2);  ?></li>
+                                                    <li><i class="fp-ht-food"></i>Salary : <?php echo $result->SALARIES; ?></li>
                                                     <li><i class="fa fa-sun-"></i>Duration of Employment : <?php echo $result->DURATION_EMPLOYEMENT; ?></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
                                                 <ul>
-                                                    <!-- <li><i class="fp-ht-dumbbell"></i>Qualification/Work Experience : <?php echo $result->QUALIFICATION_WORKEXPERIENCE; ?></li> -->
-                                                    <li><i class="fp-ht-tv"></i>Prefered Sex : <?php echo $result->PREFEREDSEX; ?></li>
+                                                    <li><i class="fp-ht-tv"></i>Prefered Gender : <?php echo $result->PREFEREDSEX; ?></li>
                                                     <li><i class=""></i>Sector of Vacancy : <?php echo $result->SECTOR_VACANCY; ?></li>
                                                 </ul>
                                             </div>

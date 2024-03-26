@@ -38,8 +38,7 @@
 					  <input name="deptid" type="hidden" value="">
 					  <input  class="form-control input-sm" id="MNAME" name="MNAME" placeholder=
 					      "Middle Name"    onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
-					   <!-- <input class="form-control input-sm" id="DEPARTMENT_DESC" name="DEPARTMENT_DESC" placeholder=
-					      "Description" type="text" value=""> -->
+					  
 					</div>
 				</div>
 			</div> 
@@ -209,8 +208,7 @@
 			      <input name="deptid" type="hidden" value="">
 			      <input  class="form-control input-sm" id="PASS" name="PASS" placeholder=
 			          "Password" type="password"   onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
-			       <!-- <input class="form-control input-sm" id="DEPARTMENT_DESC" name="DEPARTMENT_DESC" placeholder=
-			          "Description" type="text" value=""> -->
+			   
 			    </div>
 			  </div>
 			</div> 
@@ -231,9 +229,7 @@
 			      <label class="col-md-4 control-label" for=
 			      ""></label>  
 
-			      <!--<div class="col-md-8"> 
-			      		<label><input type="checkbox"> By Sign up you are agree with our <a href="#">terms and condition</a></label>
-			     </div> -->
+			     
 			    </div>
 			</div>    
 			<div class="form-group">

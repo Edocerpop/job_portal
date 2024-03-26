@@ -156,49 +156,64 @@ function doUpdate($jobid=0,$fileid=0) {
 function doRegister(){
 	global $mydb;
 	if (isset($_POST['btnRegister'])) { 
-			$birthdate =  $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
+		$birthdate =  $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
 
-			$age = date_diff(date_create($birthdate),date_create('today'))->y;
+		$age = date_diff(date_create($birthdate),date_create('today'))->y;
 
-			if ($age < 20){
+		if ($age < 20){
 			message("Invalid age. 20 years old and above is allowed.", "error");
 			redirect("index.php?q=register");
-
+		}else{
+			if(strlen($_POST['PASS']) < 8){
+				message("Invalid password. Password should have more than 8 characters.", "error");
+				redirect("index.php?q=register");
 			}else{
+				if(strlen($_POST['TELNO']) < 10){
+					message("Invalid Contact Number. Contact Number should have 10 or more characters.", "error");
+					redirect("index.php?q=register");
+				}else{
+				// Check if username already exists
+				$username = $_POST['USERNAME'];
+				$sql = "SELECT * FROM `tblapplicants` WHERE `USERNAME` = '{$username}' LIMIT 1";
+				$mydb->setQuery($sql);
+				$result = $mydb->executeQuery();
+				$count = $mydb->num_rows($result);
 
-			$autonum = New Autonumber();
-			$auto = $autonum->set_autonumber('APPLICANT');
-			 
-			$applicant =New Applicants();
-			$applicant->APPLICANTID = date('Y').$auto->AUTO;
-			$applicant->FNAME = $_POST['FNAME'];
-			$applicant->LNAME = $_POST['LNAME'];
-			$applicant->MNAME = $_POST['MNAME'];
-			$applicant->ADDRESS = $_POST['ADDRESS'];
-			$applicant->SEX = $_POST['optionsRadios'];
-			$applicant->CIVILSTATUS = $_POST['CIVILSTATUS'];
-			$applicant->BIRTHDATE = $birthdate;
-			$applicant->BIRTHPLACE = $_POST['BIRTHPLACE'];
-			$applicant->AGE = $age;
-			$applicant->USERNAME = $_POST['USERNAME'];
-			$applicant->PASS = sha1($_POST['PASS']);
-			$applicant->EMAILADDRESS = $_POST['EMAILADDRESS'];
-			$applicant->CONTACTNO = $_POST['TELNO'];
-			$applicant->DEGREE = $_POST['DEGREE'];
-			$applicant->create();
+				if ($count > 0) {
+					message("Username already exists. Please choose a different username.", "error");
+					redirect("index.php?q=register");
+				} else {
+					// Proceed with registration
+					$autonum = New Autonumber();
+					$auto = $autonum->set_autonumber('APPLICANT');
+					 
+					$applicant = New Applicants();
+					$applicant->APPLICANTID = date('Y').$auto->AUTO;
+					$applicant->FNAME = $_POST['FNAME'];
+					$applicant->LNAME = $_POST['LNAME'];
+					$applicant->MNAME = $_POST['MNAME'];
+					$applicant->ADDRESS = $_POST['ADDRESS'];
+					$applicant->SEX = $_POST['optionsRadios'];
+					$applicant->CIVILSTATUS = $_POST['CIVILSTATUS'];
+					$applicant->BIRTHDATE = $birthdate;
+					$applicant->BIRTHPLACE = $_POST['BIRTHPLACE'];
+					$applicant->AGE = $age;
+					$applicant->USERNAME = $_POST['USERNAME'];
+					$applicant->PASS = sha1($_POST['PASS']);
+					$applicant->EMAILADDRESS = $_POST['EMAILADDRESS'];
+					$applicant->CONTACTNO = $_POST['TELNO'];
+					$applicant->DEGREE = $_POST['DEGREE'];
+					$applicant->create();
 
+					$autonum = New Autonumber();
+					$autonum->auto_update('APPLICANT');
 
- 
-			$autonum = New Autonumber();
-			$autonum->auto_update('APPLICANT');
-
-
-			message("You are successfully registered to the site. You can login now!","success");
-			redirect("index.php?q=success");
-
-			
-	 }
-}
+					message("You are successfully registered to the site. You can login now!","success");
+					redirect("index.php?q=success");
+				}
+			}
+		}}
+	}
 }
 
 function doLogin(){
@@ -207,17 +222,13 @@ function doLogin(){
 	$upass  = trim($_POST['PASS']);
 	$h_upass = sha1($upass);
  
-  //it creates a new objects of member
     $applicant = new Applicants();
-    //make use of the static function, and we passed to parameters
     $res = $applicant->applicantAuthentication($email, $h_upass);
     if ($res==true) { 
 
        	message("You are now successfully login!","success");
        
-       // $sql="INSERT INTO `tbllogs` (`USERID`,USERNAME, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) 
-       //    VALUES (".$_SESSION['USERID'].",'".$_SESSION['FULLNAME']."','".date('Y-m-d H:i:s')."','".$_SESSION['UROLE']."','Logged in')";
-       //    mysql_query($sql) or die(mysql_error()); 
+
          redirect(web_root."applicant/");
      
     }else{
@@ -225,27 +236,28 @@ function doLogin(){
     } 
 }
  
-function UploadImage($jobid=0){
+function UploadImage($jobid=0)
+{
 	$target_dir = "applicant/photos/";
 	$target_file = $target_dir . date("dmYhis") . basename($_FILES["picture"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	
 	
-	if($imageFileType != "jpg" || $imageFileType != "png" || $imageFileType != "jpeg"
-|| $imageFileType != "gif" ) {
-		 if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+	if($imageFileType != "jpg" || $imageFileType != "png" || $imageFileType != "jpeg"|| $imageFileType != "gif" ) 
+	{
+		 if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) 
+		 {
 			return  date("dmYhis") . basename($_FILES["picture"]["name"]);
-		}else{
+		 }else
+		 {
 			message("Error Uploading File","error");
-			// redirect(web_root."index.php?q=apply&job=".$jobid."&view=personalinfo");
-			// exit;
-		}
-	}else{
-			message("File Not Supported","error");
-			// redirect(web_root."index.php?q=apply&job=".$jobid."&view=personalinfo");
-			// exit;
-		}
+
+		 }
+	}else
+	{
+		message("File Not Supported","error");
+	}
 } 
 
 

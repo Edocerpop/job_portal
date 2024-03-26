@@ -3,9 +3,7 @@
 	
 ?>
 <style type="text/css">
-	/*    --------------------------------------------------
-	:: General
-	-------------------------------------------------- */
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	color: #353535;
@@ -27,9 +25,7 @@ body {
 	font-weight: bold;
 }
 
-/*	--------------------------------------------------
-	:: Table Filter
-	-------------------------------------------------- */
+
 .panel {
 	border: 1px solid #ddd;
 	background-color: #fcfcfc;
@@ -79,7 +75,6 @@ body {
 }
 .table-filter .media-body {
     display: block;
-    /* Had to use this style to force the div to expand (wasn't necessary with my bootstrap version 3.3.6) */
 }
 .table-filter .media-meta {
 	font-size: 11px;
@@ -178,7 +173,6 @@ body {
 										<td> 
 											<div class="media">
 												<a href="#" class="pull-left">
-													<!-- <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo"> -->
 											     <span class="fa fa-building-o"></span>
 												</a>
 												<div class="media-body">

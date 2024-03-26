@@ -54,7 +54,7 @@ global $mydb;
 }
 .content-footer  .submitbutton{  
 	margin-top: 20px;
-	/*padding: 0;*/
+	
 
 }
 </style>
@@ -69,7 +69,7 @@ global $mydb;
 	<div class="col-sm-6">
 		<ul>
             <li><i class="fp-ht-bed"></i>Required No. of Employee's : <?php echo $job->REQ_NO_EMPLOYEES; ?></li>
-            <li><i class="fp-ht-food"></i>Salary : <?php echo number_format($job->SALARIES,2);  ?></li>
+            <li><i class="fp-ht-food"></i>Salary : <?php echo $job->SALARIES;  ?></li>
             <li><i class="fa fa-sun-"></i>Duration of Employment : <?php echo $job->DURATION_EMPLOYEMENT; ?></li>
         
 	 

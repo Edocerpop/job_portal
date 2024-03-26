@@ -24,27 +24,37 @@ switch ($action) {
  
 	}
    
-	function doInsert(){
-		if(isset($_POST['save'])){
-
-		if ( $_POST['COMPANYNAME'] == "" || $_POST['COMPANYADDRESS'] == "" || $_POST['COMPANYCONTACTNO'] == "" ) {
-			$messageStats = false;
-			message("All field is required!","error");
-			redirect('index.php?view=add');
-		}else{	
-			$company = New Company();
-			$company->COMPANYNAME		= $_POST['COMPANYNAME'];
-			$company->COMPANYADDRESS	= $_POST['COMPANYADDRESS'];
-			$company->COMPANYCONTACTNO	= $_POST['COMPANYCONTACTNO'];
-			$company->create();
-
-			message("New company created successfully!", "success");
-			redirect("index.php");
-			
+	function doInsert() {
+		if(isset($_POST['save'])) {
+			if ($_POST['COMPANYNAME'] == "" || $_POST['COMPANYADDRESS'] == "" || $_POST['COMPANYCONTACTNO'] == "") {
+				$messageStats = false;
+				message("All fields are required!","error");
+				redirect('index.php?view=add');
+			} else {
+				try {
+					$company = new Company();
+					$company->COMPANYNAME = $_POST['COMPANYNAME'];
+					$company->COMPANYADDRESS = $_POST['COMPANYADDRESS'];
+					$company->COMPANYCONTACTNO = $_POST['COMPANYCONTACTNO'];
+					$company->create();
+	
+					message("New company created successfully!", "success");
+					redirect("index.php");
+				} catch (Exception $e) {
+					if ($e->getCode() == 23000) { 
+						$messageStats = false;
+						message("Company with the name [" . $_POST['COMPANYNAME'] . "] already exists!", "error");
+						redirect('index.php?view=add');
+					} else {
+						$messageStats = false;
+						message("An error occurred while creating the company: " , "error");
+						redirect('index.php?view=add');
+					}
+				}
+			}
 		}
-		}
-
 	}
+	
 
 	function doEdit(){
 		if(isset($_POST['save'])){

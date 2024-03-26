@@ -6,24 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com" />
-<!-- css -->
+
 <link href="<?php echo web_root; ?>plugins/home-plugins/css/bootstrap.min.css" rel="stylesheet" />
 <link href="<?php echo web_root; ?>plugins/home-plugins/css/fancybox/jquery.fancybox.css" rel="stylesheet"> 
 <link href="<?php echo web_root; ?>plugins/home-plugins/css/flexslider.css" rel="stylesheet" /> 
 <link href="<?php echo web_root; ?>plugins/home-plugins/css/style.css" rel="stylesheet" />
-<!-- <link rel="stylesheet" href="<?php echo web_root;?>plugins/dataTables/dataTables.bootstrap.css">  --> 
 <link rel="stylesheet" href="<?php echo web_root;?>plugins/font-awesome/css/font-awesome.min.css"> 
 
 <link rel="stylesheet" href="<?php echo web_root;?>plugins/dataTables/jquery.dataTables.min.css"> 
 <link rel="stylesheet" href="<?php echo web_root;?>plugins/dataTables/jquery.dataTables_themeroller.css"> 
-<!-- datetime picker CSS -->
+
 <link href="<?php echo web_root; ?>plugins/datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <link href="<?php echo web_root; ?>plugins/datepicker/datepicker3.css" rel="stylesheet" media="screen">
  
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
 <style type="text/css">
  
   #content {
@@ -56,7 +52,6 @@
 <body>
 <div id="wrapper" class="home-page">
  
-  <!-- start header -->
   <header>
         <div class="topbar navbar-fixed-top">
           <div class="container">
@@ -82,7 +77,6 @@
                     echo ' <p class="pull-right login">   | <a title="View Profile" href="'.web_root.'applicant/"> <i class="fa fa-user"></i> Hi, '. $appl->FNAME. ' '.$appl->LNAME .' </a> | <a href="'.web_root.'logout.php">  <i class="fa fa-sign-out"> </i>Logout</a> </p>';
 
                     }else{ ?>
-                     <!--<botton  class="pull-right login"><a data-target="#myModal" data-toggle="modal" href=""> Login </a></botton> -->
                      <botton  class="pull-right login" > <a data-target="#myModal" data-toggle="modal" >Login </a></botton>
                         <p>/</p>
                      <botton  class="pull-right login"> <a href="<?php echo web_root; ?>index.php?q=register" >Register</a></botton>
@@ -140,9 +134,7 @@
                             ?> 
                           </ul>
                        </li> -->
-                       <!-- <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='company'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=company">Company</a></li>-->
                         <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='hiring here'){ echo 'active'; }else{ echo ''; }} ?>"><a href="<?php echo web_root; ?>index.php?q=hiring">Hiring here</a></li>
-                       <!-- <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='About'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=About">About Us</a></li>-->
                         <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='Contact'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=Contact">Contact</a></li>
                         <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='About'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=About">About Us</a></li>
                     </ul>
@@ -150,7 +142,6 @@
             </div>
         </div>
   </header>
-  <!-- end header -->  
 
   <?php
     if (!isset($_SESSION['APPLICANTID'])) { 
@@ -207,33 +198,8 @@
           </ul>
         </div>
       </div>
-      <!--<div class="col-md-4 col-sm-4">
-        <div class="widget">
-          <h5 class="widgetheading">Latest posts</h5>
-          <ul class="link-list">
-            <?php 
-                  $sql = "SELECT * FROM `tblcompany` c,`tbljob` j WHERE c.`COMPANYID`=j.`COMPANYID`   ORDER BY DATEPOSTED DESC LIMIT 3" ;
-                  $mydb->setQuery($sql);
-                  $cur = $mydb->loadResultList();
+    
 
-
-                  foreach ($cur as $result) {
-                    echo ' <li><a href="'.web_root.'index.php?q=viewjob&search='.$result->JOBID.'">'.$result->COMPANYNAME . '/ '. $result->OCCUPATIONTITLE .'</a></li>';
-                  } 
-              ?> 
-          </ul>
-        </div>
-      </div>-->
-<!--       <div class="col-md-3 col-sm-3">
-        <div class="widget">
-          <h5 class="widgetheading">Recent News</h5>
-          <ul class="link-list">
-            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-          </ul>
-        </div>
-      </div> -->
     </div>
   </div>
   <div id="sub-footer">
@@ -246,24 +212,11 @@
             </p>
           </div>
         </div>
-       <!-- <div class="col-lg-6">
-          <ul class="social-network">
-            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>-->
+     
   </footer>
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/jquery.js"></script>
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/jquery.easing.1.3.js"></script>
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/bootstrap.min.js"></script>
@@ -286,13 +239,11 @@
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/animate.js"></script>
 
 
-<!-- Vendor Scripts -->
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/modernizr.custom.js"></script>
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/jquery.isotope.min.js"></script>
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/jquery.magnific-popup.min.js"></script>
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/animate.js"></script>
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/custom.js"></script> 
-<!-- <script src="<?php echo web_root; ?>plugins/paralax/paralax.js"></script>  -->
 
  <script type="text/javascript">
    
@@ -313,8 +264,6 @@
         var username = document.getElementById("user_email");
         var pass = document.getElementById("user_pass");
 
-        // alert(username.value)
-        // alert(pass.value)
         if(username.value=="" && pass.value==""){   
           $('#loginerrormessage').fadeOut(); 
                 $('#loginerrormessage').fadeIn();  
@@ -324,18 +273,15 @@
                         "padding"    : "5px;"
                     }); 
           $("#loginerrormessage").html("Invalid Username and Password!");
-          //  $("#loginerrormessage").css(function(){ 
-          //   "background-color" : "red";
-          // });
+         
         }else{
 
-          $.ajax({    //create an ajax request to load_page.php
+          $.ajax({  
               type:"POST",  
               url: "process.php?action=login",    
-              dataType: "text",  //expect html to be returned  
+              dataType: "text",  
               data:{USERNAME:username.value,PASS:pass.value},               
               success: function(data){   
-                // alert(data);
                 $('#loginerrormessage').fadeOut(); 
                 $('#loginerrormessage').fadeIn();  
                 $('#loginerrormessage').css({ 

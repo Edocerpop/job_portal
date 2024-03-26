@@ -11,7 +11,7 @@
                    <div class="col-lg-12">
                       <h1 class="page-header">Add New Job Vacancy</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
+                    
                  </div> 
 
                  <div class="form-group">
@@ -27,7 +27,7 @@
                             $mydb->setQuery($sql);
                             $res  = $mydb->loadResultList();
                             foreach ($res as $row) {
-                              # code...
+                              
                               echo '<option value='.$row->COMPANYID.'>'.$row->COMPANYNAME.'</option>';
                             }
 
@@ -122,7 +122,7 @@
                  <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "PREFEREDSEX">Prefered Sex:</label> 
+                      "PREFEREDSEX">Prefered Gender:</label> 
                       <div class="col-md-8">
                           <select class="form-control input-sm" id="PREFEREDSEX" name="PREFEREDSEX">
                           <option value="None">Select</option>
