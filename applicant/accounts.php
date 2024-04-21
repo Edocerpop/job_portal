@@ -12,7 +12,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">Accounts</h3>
  
-              <!-- /.box-tools -->
+              
             </div> 
               <div class="form-group">
                 <div class="col-md-11">
@@ -140,7 +140,7 @@
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Widow" >Widow</option>
-                        <!-- <option value="Fourth" >Fourth</option> -->
+                        
                     </select> 
                   </div>
                 </div>

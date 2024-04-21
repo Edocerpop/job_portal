@@ -4,9 +4,7 @@
 	  $applicant = $appl->single_applicant($_SESSION['APPLICANTID']); 
   ?>
   <style type="text/css">
-/*    #image-container {
-      width: 230px;
-    }*/
+
     .panel-body img{
       width: 100%;
       height: 50%;
@@ -36,16 +34,15 @@
           <ul class="list-group">
        
          
-            <li class="list-group-item text-muted">Profile</li><!-- 
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li> -->
+            <li class="list-group-item text-muted">Profile</li>
+            
             <li class="list-group-item text-right"><span class="pull-left"><strong>Real Name</strong></span> 
              <?php echo $applicant->FNAME .' '.substr($applicant->MNAME, 1,2).'. '.$applicant->LNAME; ?> 
              </li>
             
           </ul> 
                
-              <!-- <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a> -->
+             
 
           <div class="box box-solid">  
             <div class="box-body no-padding">
@@ -58,10 +55,10 @@
 
               </ul>
             </div>
-            <!-- /.box-body -->
+           
           </div>
   
-          <!-- /.box -->
+          
           </div>
           
         </div> 
@@ -89,8 +86,7 @@
         require_once("appliedjobs.php");
         break;
       case 'accounts':
-        # code...
-        // require_once("accounts.php");
+        
         break;
       
       default:
@@ -99,30 +95,18 @@
         break;
     }
 ?>  
-         <!--   <ul class="nav nav-tabs" id="myTab">
-        <li class="<?php echo  $_SESSION['appliedjobs']; ?>"><a href="<?php echo web_root.'applicant/index.php?view=appliedjobs'; ?>" >Applied Jobs</a></li> 
-        <li class="<?php echo  $_SESSION['accounts'];  ?>"><a href="<?php echo web_root.'applicant/index.php?view=accounts'; ?>" >Accounts</a></li> 
-      </ul>
-          
-      <div class="tab-content bottomline">
-         
-         <div class="tab-pane <?php echo $_SESSION['appliedjobs']; ?>" id="appliedjobs"><br/>  
-         </div>
-           <div class="tab-pane <?php echo $_SESSION['accounts']; ?>" id="accounts"><br/>  
-          </div> 
+           
+        </div>
+    </div>
 
-        </div> -->    
-        </div><!--/col-sm-9-->
-    </div><!--/row-->
-
-  </div><!--/contanier--> 
+  </div>
 
    <?php  
     unset($_SESSION['appliedjobs']);
     unset($_SESSION['accounts']); 
      ?>
  
-         <!-- Modal -->
+        
                     <div class="modal fade" id="myModal" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -160,6 +144,6 @@
                                         name="savephoto" type="submit">Upload Photo</button>
                                     </div>
                                 </form>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
+                            </div>
+                        </div>
+                    </div>

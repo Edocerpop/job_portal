@@ -27,14 +27,13 @@
 							  </thead> 
 							  <tbody>
 							  	<?php   
-							  		// $mydb->setQuery("SELECT * 
-											// 			FROM  `tblusers` WHERE TYPE != 'Customer'");
+							  		 
 							  		$mydb->setQuery("SELECT * FROM `tblcompany` c  , `tbljobregistration` j, `tbljob` j2, `tblapplicants` a WHERE c.`COMPANYID`=j.`COMPANYID` AND  j.`JOBID`=j2.`JOBID` AND j.`APPLICANTID`=a.`APPLICANTID` ");
 							  		$cur = $mydb->loadResultList();
 
 									foreach ($cur as $result) { 
 							  		echo '<tr>';
-							  		// echo '<td width="5%" align="center"></td>';
+							  		
 							  		echo '<td>'. $result->APPLICANT.'</td>';
 							  		echo '<td>' . $result->OCCUPATIONTITLE.'</a></td>';
 							  		echo '<td>' . $result->COMPANYNAME.'</a></td>'; 

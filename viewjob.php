@@ -4,7 +4,7 @@
      
  <?php
  if (isset($_GET['search'])) {
-     # code...
+    
     $jobid = $_GET['search'];
  }else{
      $jobid = '';
@@ -16,9 +16,9 @@
 
 
     foreach ($cur as $result) {
-        # code...
+      
  
- // `OCCUPATIONTITLE`, `REQ_NO_EMPLOYEES`, `SALARIES`, `DURATION_EMPLOYEMENT`, `QUALIFICATION_WORKEXPERIENCE`, `PREFEREDSEX`, `SECTOR_VACANCY`, `DATEPOSTED`
+ 
   ?> 
            <div class="container">
              <div class="mg-available-rooms">

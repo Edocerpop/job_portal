@@ -1,17 +1,17 @@
- <!-- Content Wrapper. Contains page content -->
+ 
   <div class="content-wrapper"> 
-    <!-- Main content -->
+    
     <section class="content">
       <div class="row"> 
-        <!-- /.col -->
+       
         <?php if (!isset($_GET['p'])) {  ?>
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Applied Jobs</h3> 
-              <!-- /.box-tools -->
+              
             </div>
-            <!-- /.box-header -->
+            
             <div class="box-body no-padding">
               <div class="table-responsive mailbox-messages">
                 <table id="dash-table" class="table table-hover table-striped">
@@ -41,21 +41,21 @@
        
                   </tbody>
                 </table>
-                <!-- /.table -->
+               
               </div>
-              <!-- /.mail-box-messages -->
+              
             </div> 
           </div>
-          <!-- /. box -->
+          
         </div>
-        <!-- /.col -->
+        
         <?php }else{
           require_once ("viewjob.php");          
         } ?>
       </div>
-      <!-- /.row -->
+     
     </section>
-    <!-- /.content -->
+    
   </div>
    
  

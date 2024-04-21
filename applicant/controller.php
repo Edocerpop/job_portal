@@ -98,7 +98,7 @@ switch ($action) {
 
 function doAddFiles(){
 global $mydb;
- // `JOBID`, `FILE_NAME`, `FILE_LOCATION`, `USERATTACHMENTID`
+ 
 		$picture = UploadImage();
 		$location = "photos/". $picture ;
 

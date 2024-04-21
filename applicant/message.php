@@ -6,15 +6,14 @@
   </style>
 <?php 
 if (!isset($_GET['p'])) {
-  # code... 
+ 
 ?>
-  <!-- Content Wrapper. Contains page content -->
+  
   <div class="content-wrapper">
-    <!-- Main content -->
+    
     <section class="content">
       <div class="row">
     
-        <!-- /.col -->
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -23,9 +22,9 @@ if (!isset($_GET['p'])) {
               <div class="box-tools pull-right" style="margin-bottom: 5px;">
                 
               </div>
-              <!-- /.box-tools -->
+             
             </div>
-            <!-- /.box-header -->
+          
             <div class="box-body no-padding">
               <div class="mailbox-controls">
                 <div class="btn-group">
@@ -39,10 +38,10 @@ if (!isset($_GET['p'])) {
                         $mydb->setQuery($sql);
                         $cur = $mydb->loadResultList();
                         foreach ($cur as $result) {
-                          # code...
+                          
                           echo '<tr>';
                           echo '<td><input type="checkbox"></td>';
-                          // echo '<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>';
+                          
                           echo '<td class="mailbox-name"><a href="index.php?view=message&p=readmessage&id='.$result->REGISTRATIONID.'">'.$result->COMPANYNAME.'</a></td>';
                           echo '<td class="mailbox-subject">'.$result->REMARKS.'</td>'; 
                           echo '<td class="mailbox-date">'.$result->DATETIMEAPPROVED.'</td>';
@@ -51,35 +50,33 @@ if (!isset($_GET['p'])) {
                     ?> 
                   </tbody>
                 </table>
-                <!-- /.table -->
+               
               </div>
-              <!-- /.mail-box-messages -->
+              
             </div>
-            <!-- /.box-body -->
+          
             <div class="box-footer no-padding">
               <div class="mailbox-controls">
-                <!-- Check all button -->
-                <!-- <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i> -->
+              
                 </button>
                 <div class="btn-group">
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                 <!--  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button> -->
+                
                 </div>
-                <!-- /.btn-group -->
+                
                 <a href="index.php?view=message" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></a>
                 
-                <!-- /.pull-right -->
+               
               </div>
             </div>
           </div>
-          <!-- /. box -->
+          
         </div>
-        <!-- /.col -->
+       
       </div>
-      <!-- /.row -->
+      
     </section>
-    <!-- /.content -->
+   
   </div>
    
  <?php }else{  

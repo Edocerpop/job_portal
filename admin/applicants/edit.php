@@ -101,7 +101,7 @@
    switch ($emp->WORKSTATS) {
 
      case 'Regular':
-       # code...
+       
         $workstatus ='
         <select class="form-control input-sm" name="WORKSTATS" id="WORKSTATS">
                                       <option value="none" >Select</option>
@@ -112,7 +112,7 @@
        break;
 
      case 'Regular':
-       # code...
+      
         $workstatus ='
         <select class="form-control input-sm" name="WORKSTATS" id="WORKSTATS">
                                       <option value="none" >Select</option>

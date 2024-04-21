@@ -12,7 +12,7 @@
         <div class="container">
            <div class="center wow fadeInDown">
                  <h2 class="page-header">Add New Employee</h2>
-                <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+                
             </div>
                
             <div class="row">
@@ -26,8 +26,7 @@
                         "EMPLOYEEID">Employee ID:</label>
 
                         <div class="col-md-8"> 
-                           <!-- <input class="form-control input-sm" id="EMPLOYEEID" name="EMPLOYEEID" placeholder=
-                              "Employee No" type="text" value="<?php echo $res->AUTO; ?>"> -->
+                           
                               <input class="form-control input-sm" id="EMPLOYEEID" name="EMPLOYEEID" placeholder=
                               "Employee ID" type="text" value="">
                      </div>
@@ -68,8 +67,7 @@
                           <input name="deptid" type="hidden" value="">
                           <input  class="form-control input-sm" id="MNAME" name="MNAME" placeholder=
                               "Middle Name"    onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off">
-                           <!-- <input class="form-control input-sm" id="DEPARTMENT_DESC" name="DEPARTMENT_DESC" placeholder=
-                              "Description" type="text" value=""> -->
+                           
                         </div>
                       </div>
                     </div> 
@@ -206,7 +204,7 @@
                                       <option value="Single">Single</option>
                                       <option value="Married">Married</option>
                                       <option value="Widow" >Widow</option>
-                                      <!-- <option value="Fourth" >Fourth</option> -->
+                                      
                                   </select> 
                                 </div>
                               </div>

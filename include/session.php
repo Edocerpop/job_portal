@@ -1,12 +1,12 @@
 <?php
-session_start(); //before we store information of our member, we need to start first the session
+session_start(); 
 	
-	//create a new function to check if the session variable member_id is on set
+	
 	function logged_in() {
 		return isset($_SESSION['USERID']);
         
 	}
-	//this function if session member is not set then it will be redirected to login.php
+	
 	function confirm_logged_in() {
 		if (!logged_in()) {?>
 
@@ -43,12 +43,11 @@ function admin_confirm_logged_in() {
 
 	function message($msg="", $msgtype="") {
 	  if(!empty($msg)) {
-	    // then this is "set message"
-	    // make sure you understand why $this->message=$msg wouldn't work
+	    
 	    $_SESSION['message'] = $msg;
 	    $_SESSION['msgtype'] = $msgtype;
 	  } else {
-	    // then this is "get message"
+	    
 			return $message;
 	  }
 	}
@@ -93,11 +92,10 @@ function notifycheck(){
 
  function keyactive($key=""){
  	 if(!empty($key)) {
-	    // then this is "set message"
-	    // make sure you understand why $this->message=$msg wouldn't work
+	   
 	    $_SESSION['active'] = $key; 
 	  } else {
-	    // then this is "get message"
+	   
 			return $keyactive;
 	  }
   
@@ -140,13 +138,7 @@ function notifycheck(){
 
 
 
-        // if(isset($_GET['active'])){
-        //    $_SESSION['work'] = 'active' ;
-        // }elseif(isset($_GET['active'])){
-        //   $_SESSION['otherInfo']='active';
-        // }else{
-        //   $_SESSION['basicInfo']   = "active";
-        // }
+      
         
       }
  }
@@ -154,30 +146,27 @@ function notifycheck(){
 
  
 function product_exists($pid,$q){
-    // $pid=intval($pid); 
+    
     $max=count($_SESSION['gcCart']);
     $flag=0;
     for($i=0;$i<$max;$i++){
       if($pid==$_SESSION['gcCart'][$i]['mealid']){
           if($q>0  && $q<=999){
-            # code...
+            
             $flag=1;
              $_SESSION['gcCart'][$i]['qty']= $_SESSION['gcCart'][$i]['qty'] + $q;
              $_SESSION['gcCart'][$i]['subtotal']= $_SESSION['gcCart'][$i]['price'] * $_SESSION['gcCart'][$i]['qty'];
               message("{$q} Item added in the cart.","success");
               break;
           }
-        // $flag=1;
-        // message("Item is already in the cart.","error");
-        // break; 
-
+       
           
       }
     }
     return $flag;
   }
  function addtocart($pid,$meals,$price,$q,$subtotal){
-    // if($pid<1 or $q<1) return;
+    
     if($q<1) return;
     if (!empty($_SESSION['gcCart'])){
 
@@ -211,7 +200,7 @@ function product_exists($pid,$q){
      message("{$q} Item added in the cart.","success");
 }
 function removetocart($pid){
-	// $pid=intval($pid);
+
 	$max=count($_SESSION['gcCart']);
 	for($i=0;$i<$max;$i++){
 		if($pid==$_SESSION['gcCart'][$i]['mealid']){
@@ -224,7 +213,7 @@ function removetocart($pid){
 
 
  function editproduct($pid,$q){
-    // $pid=intval($pid); 
+    
   if($q<1) return;
     if (!empty($_SESSION['gcCart'])){
        if(is_array($_SESSION['gcCart'])){
@@ -239,9 +228,7 @@ function removetocart($pid){
                    $_SESSION['gcCart'][$i]['subtotal']= $_SESSION['gcCart'][$i]['price'] * $_SESSION['gcCart'][$i]['qty'];
                     break;
                 }
-              // $flag=1;
-              // message("Item is already in the cart.","error");
-              // break;
+              
             }
           }
           return $flag;
@@ -251,7 +238,7 @@ function removetocart($pid){
 
 
 function admin_product_exists($pid,$q){
-    // $pid=intval($pid); 
+    
     $max=count($_SESSION['admin_gcCart']);
     $flag=0;
     for($i=0;$i<$max;$i++){
@@ -261,11 +248,11 @@ function admin_product_exists($pid,$q){
             $flag=1;
              $_SESSION['admin_gcCart'][$i]['qty']= $_SESSION['admin_gcCart'][$i]['qty'] + $q;
              $_SESSION['admin_gcCart'][$i]['subtotal']= $_SESSION['admin_gcCart'][$i]['price'] * $_SESSION['admin_gcCart'][$i]['qty'];
-              // message("{$q} Item added in the cart.","success");
+              
               break;
           }
         $flag=1;
-        // message("Item is already in the cart.","error");
+       
         break;  
       }
     }
@@ -303,10 +290,10 @@ function admin_product_exists($pid,$q){
       $_SESSION['admin_gcCart'][0]['subtotal']=$subtotal;
 }
   
-     // message("{$q} Item added in the cart.","success");
+     
 }
 function admin_removetocart($pid){
-  // $pid=intval($pid);
+  
   $max=count($_SESSION['admin_gcCart']);
   for($i=0;$i<$max;$i++){
     if($pid==$_SESSION['admin_gcCart'][$i]['mealid']){
@@ -319,7 +306,7 @@ function admin_removetocart($pid){
 
 
  function admin_editproduct($pid,$q){
-    // $pid=intval($pid); 
+    
   if($q<1) return;
     if (!empty($_SESSION['admin_gcCart'])){
        if(is_array($_SESSION['admin_gcCart'])){
@@ -334,9 +321,7 @@ function admin_removetocart($pid){
                    $_SESSION['admin_gcCart'][$i]['subtotal']= $_SESSION['admin_gcCart'][$i]['price'] * $_SESSION['admin_gcCart'][$i]['qty'];
                     break;
                 }
-              // $flag=1;
-              // message("Item is already in the cart.","error");
-              // break;
+              
             }
           }
           return $flag;

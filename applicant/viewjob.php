@@ -59,7 +59,7 @@ global $mydb;
 }
 .content-footer  .submitbutton{  
 	margin-top: 20px;
-	/*padding: 0;*/
+	
 
 }
 </style>

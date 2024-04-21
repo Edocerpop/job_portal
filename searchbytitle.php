@@ -36,25 +36,23 @@
 }
 </style>
 <form action="index.php?q=result&searchfor=bytitle" method="POST"> 
- <section id="content">
- <div class="container">
-	<div class="row">
-		<div class="col-md-2"></div>
-        <div class="col-md-8">
-    		<h2>Search field</h2>
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" name="SEARCH" class="form-control input-lg" placeholder="Search By Job Title" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2>Search field</h2>
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" name="SEARCH" class="form-control input-lg" placeholder="Search By Job Title" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-2"></div>
             </div>
-        </div> 
-		<div class="col-md-2"></div>
-	</div>
-</div>
- </section>
- </form>
+        </div>
+    </section>
+</form>

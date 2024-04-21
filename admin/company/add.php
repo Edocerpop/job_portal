@@ -33,7 +33,7 @@
                       <div class="col-md-8">
                         <textarea class="form-control input-sm" id="COMPANYADDRESS" name="COMPANYADDRESS" placeholder=
                             "Company Address" type="text" value="" required  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off"></textarea>
-                         <!-- <input class="form-control input-sm" id="COMPANYADDRESS" name="COMPANYADDRESS" placeholder="Company Address"   autocomplete="none"/>  -->
+                         
                       </div>
                     </div>
                   </div> 
@@ -50,18 +50,7 @@
                     </div>
                   </div>  
 
-                  <!--  <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "COMPANYMISSION">Company Mission:</label>
-
-                      <div class="col-md-8">
-                        
-                         <textarea class="form-control input-sm" id="COMPANYMISSION" name="COMPANYMISSION" placeholder=
-                            "Company Mission" type="text" value="" required  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off"></textarea>
-                      </div>
-                    </div>
-                  </div>  -->
+                  
 
                   <div class="form-group">
                     <div class="col-md-8">
@@ -70,7 +59,7 @@
 
                       <div class="col-md-8">
                          <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span> Save</button>
-                      <!-- <a href="index.php" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<strong>Back</strong></a> -->
+                     
                      
                      </div>
                     </div>
