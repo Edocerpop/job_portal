@@ -35,12 +35,14 @@
                               # code...
                               echo '<option SELECTED value='.$row->COMPANYID.'>'.$row->COMPANYNAME.'</option>';
                             }
-                            $sql ="Select * From tblcompany WHERE COMPANYID!=".$res->COMPANYID;
+                            $sql = "SELECT * FROM tblcompany";
+                            if ($res->COMPANYID != 'None') {
+                                $sql .= " WHERE COMPANYID = " . $res->COMPANYID;
+                            }
                             $mydb->setQuery($sql);
-                            $result  = $mydb->loadResultList();
+                            $result = $mydb->loadResultList();
                             foreach ($result as $row) {
-                              # code...
-                              echo '<option value='.$row->COMPANYID.'>'.$row->COMPANYNAME.'</option>';
+                                echo '<option ' . (($row->COMPANYID == $res->COMPANYID) ? 'selected' : '') . ' value="' . $row->COMPANYID . '">' . $row->COMPANYNAME . '</option>';
                             }
 
                           ?>
